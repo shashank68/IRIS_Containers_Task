@@ -3,7 +3,12 @@
 ##### Shashank D
 ##### 181CO248
 ##### 9108787430, shashankindiamanoj@gmail.com
-
+* Running Docker-Compose
+![Docker-compose](StartingDocker.png)
+* Final Running Website
+![Final Running Website](RunningWebsite.png)
+* Running Containers
+![Final Containers](RunningContainers.png)
 
 ###### Steps:
 
