@@ -1,0 +1,52 @@
+<%= form_with(model: shop, local: true) do |form| %>
+  <% if shop.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shop.errors.count, "error") %> prohibited this shop from being saved:</h2>
+
+      <ul>
+      <% shop.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title,:required => true, minlength:10,maxlength:40 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description,:required => true, minlength:20,maxlength:250 %>
+  </div>
+   <div class="field">
+    <%= form.label :images %>
+    <%= form.file_field :images,multiple: true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :excost %>
+    <%= form.number_field :excost,:required => true %>
+  </div>
+
+   <div class="field">
+    <p>Enter Category only one word for better Searches (Ex :- book,cycle,laptop)</p>
+    <%= form.label :category %>
+    <%= form.text_field :category,:required => true %>
+  </div>
+
+   <div class="field">
+    <%= form.label :contact %>
+    <%= form.text_field :contact,:required => true, minlength:10,maxlength:10 %>
+  </div>
+
+   <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address,:required => true, minlength:15,maxlength:250 %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
