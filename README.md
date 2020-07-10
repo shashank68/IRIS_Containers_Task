@@ -317,9 +317,15 @@ http {
 ```
 #### 8. Scheduled Database Dump
 * Used crontab in the host.
-* Accessed the mysql client in the container using `docker-compose exec` and executed a shell script to dump the database to host machine everyday
+* Accessed mysqldump in the container using `docker-compose exec` and executed a shell script to dump the database to host machine everyday
+* In `/etc/crontab`:
 ```
-0 0 * * * cd /home/sha68/irissys2/Shopping-App-IRIS && sudo docker-compose exec db mysql sh -c 'echo "[client]\n host=\"$MYSQL_PORT_3306_TCP_ADDR\"\n user=root\n password=\"$MYSQL_ENV_MYSQL_ROOT_PASSWORD\"" > my.cnf && exec mysqldump --defaults-file=my.cnf --all-databases' > '/home/sha68/irissys2/databasebackup/dump'
+0 0     * * *   root    /usr/bin/db_dumper
+```
+* In `/usr/bin/db_dumper`
+```
+cd /home/sha68/irissys2/Shopping-App-IRIS
+sudo docker-compose exec db bash -c 'mysqldump -p$MYSQL_ROOT_PASSWORD --all-databases' > "/home/sha68/irissys2/databasebackup/db_backup_$(date +"%d_%m_%Y")"
 ```
 
 
