@@ -1,2 +1,0 @@
-cd /home/sha68/irissys2/Shopping-App-IRIS
-sudo docker-compose exec db bash -c 'mysqldump -p$MYSQL_ROOT_PASSWORD --all-databases' > "/home/sha68/irissys2/databasebackup/db_backup_$(date +"%d_%m_%Y")"
