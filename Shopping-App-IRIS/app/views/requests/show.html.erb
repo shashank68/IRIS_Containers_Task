@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @request.description %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @request.category %>
+</p>
+<p>
+  <strong>Contact Details:</strong>
+  <%= @request.contactdetails %>
+</p>
+
+<% if current_user.id == @request.user_id %>
+<%= link_to 'Edit', edit_request_path(@request) %> |
+<% end %>
+
+<% if current_user.id == @request.user_id %>
+<%= link_to 'Back', newrequest_path%> 
+<% else %>
+<%= link_to 'Back', requests_path%>
+<% end %>

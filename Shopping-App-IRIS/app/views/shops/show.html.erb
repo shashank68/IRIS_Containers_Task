@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @shop.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @shop.description %>
+</p>
+<p>
+  <strong>Images:</strong>
+<ul class="bxslider">
+  <% (0...@shop.images.count).each do |image| %>
+
+  <li> <%= image_tag(@shop.thumbnail(image))%></li>
+   
+   <% end %>
+ </ul>
+
+</p>
+
+<p>
+  <strong>Excost:</strong>
+  <%= @shop.excost %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @shop.category %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @shop.contact %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @shop.address %>
+</p>
+
+
+<% if current_user.id == @shop.user_id %>
+<%= link_to 'Edit', edit_shop_path(@shop) %> |
+<% end %>
+
+
+
+<% if current_user.id == @shop.user_id %>
+<%= link_to 'Back', root_path%> 
+<% else %>
+<%= link_to 'Back', sale_path%>
+<% end %>

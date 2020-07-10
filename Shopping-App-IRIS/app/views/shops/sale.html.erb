@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+<%= form_tag(search_page_path, :method => "get",   
+    class: 'navbar-form navbar-left') do %>  
+  <div class="input-group">  
+    <%= search_field_tag :search, params[:search], placeholder: "Search", class: "form-control" %>  
+    <div class="input-group-btn">  
+      <%= button_tag "", :class => 'btn btn-info glyphicon glyphicon-search',:name => nil%>  
+    </div>  
+  </div>  
+<% end %>
+<h1>Shops</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+     
+      <th scope="col">Category</th>
+      <th scope="col">Excost</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @shops.each do |shop| %>
+      <tr>
+        <td><%= shop.title %></td>
+               <td><%= shop.category %></td>
+        <td><%= shop.excost %></td>
+        <td><%= link_to 'Show', shop %></td>
+        
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+<%= link_to 'Back', shops_path %>
