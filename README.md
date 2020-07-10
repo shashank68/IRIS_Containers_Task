@@ -10,7 +10,7 @@
 * Running Containers
 ![Final Containers](RunningContainers.png)
 
-###### Steps:
+## Steps:
 
 ##### 1. Dockerizing the given rails app.
   * Dockerfile:
