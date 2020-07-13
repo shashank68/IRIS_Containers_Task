@@ -34,7 +34,7 @@
 
   CMD ["rails", "server", "-b", "0.0.0.0"]
   ```
-  * Tried building the image `sudo docker build -f Dockerfile -t railsappimg`
+  * Tried building the image `sudo docker build -f Dockerfile -t railsappimg .`
   * Checked using `sudo docker run -p 8080:3000 railsappimg`
 ##### 2. Setting up MySQL container and linking
   * Used __docker-compose__ to set-up the app
