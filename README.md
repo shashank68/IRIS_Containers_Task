@@ -1,8 +1,5 @@
 # IRIS_Containers_Task
 
-##### Shashank D
-##### 181CO248
-##### 9108787430, shashankindiamanoj@gmail.com, shashankd.181co248@nitk.edu.in
 * Running Docker-Compose
 ![Docker-compose](StartingDocker.png)
 * Final Running Website
